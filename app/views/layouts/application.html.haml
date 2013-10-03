@@ -1,4 +1,5 @@
 !!! 5
+
 %html
   %head
     %title Joanne
@@ -7,4 +8,61 @@
     = csrf_meta_tags
 
     %body
-      = yield
+
+      / Header and Nav
+
+      .row
+        .large-12.columns
+          %ul.inline-list.right
+            %li
+              %a{:href => "#"}
+                %i.icon-vcard
+                Eduardo Delgaldo
+            %li
+              %a{:href => "#"}
+                %i.icon-cog
+                Opciones
+
+      / End Header and Nav
+
+      .row
+
+        / Main Content Section
+
+        .large-9.push-3.columns
+
+          = yield
+
+        / Nav Sidebar
+
+        .large-3.pull-9.columns
+
+          %ul.side-nav
+            %li.search
+              %form
+                %input{:type => "search", :placeholder => "Buscar pacientes"}
+            %li
+              %a{:href => "#"}
+                %i.icon-layout
+                General
+            %li
+              %a{:href => "#"}
+                %i.icon-users
+                Usuarios
+            %li
+              %a{:href => "#"}
+                %i.icon-line-graph
+                Gráficas
+            %li
+              %a{:href => "#"}
+                %i.icon-tools
+                Administración
+
+      / Footer
+
+      %footer.row
+        .large-13.columns
+          %hr
+          .row
+            .large-6.columns
+              %p &copy; Copyright no one at all. Go to town.

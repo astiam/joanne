@@ -47,6 +47,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    ansi (1.4.3)
     arel (4.0.0)
     atomic (1.1.10)
     bcrypt-ruby (3.0.1)
@@ -65,11 +66,14 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    entypo-rails (2.0.2)
+      railties (>= 3.1, <= 5)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     haml (4.0.3)
       tilt
+    hashr (0.0.22)
     hike (1.2.3)
     i18n (0.6.4)
     jquery-rails (3.0.4)
@@ -105,6 +109,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -123,6 +129,14 @@ GEM
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
+    tire (0.6.0)
+      activemodel (>= 3.0)
+      activesupport
+      ansi
+      hashr (~> 0.0.19)
+      multi_json (~> 1.3)
+      rake
+      rest-client (~> 1.6)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
@@ -144,6 +158,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 4.0.0)
   devise
+  entypo-rails
   haml
   jquery-rails
   mongoid!
@@ -151,6 +166,7 @@ DEPENDENCIES
   rails3_serve_static_assets!
   rails_log_stdout!
   sass-rails (~> 4.0.0)
+  tire
   turbolinks
   uglifier (>= 1.3.0)
   zurb-foundation (~> 4.0.0)

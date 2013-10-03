@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'zurb-foundation', '~> 4.0.0'
 
+gem 'entypo-rails'
+
 gem 'jquery-rails'
 
 gem 'turbolinks'
@@ -24,6 +26,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'devise'
 
-gem 'rails_log_stdout', github: 'heroku/rails_log_stdout'
+gem 'tire'
 
-gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+group :producion do
+    gem 'rails_log_stdout', github: 'heroku/rails_log_stdout', group: :production
+    gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
