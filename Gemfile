@@ -4,6 +4,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 
+
 gem 'mongoid', github: 'mongoid/mongoid'
 
 gem 'haml'
@@ -29,6 +30,12 @@ gem 'devise'
 gem 'tire'
 
 group :producion do
+    # Web Server
+    gem 'puma'
+
+    # Log Heroku activity
     gem 'rails_log_stdout', github: 'heroku/rails_log_stdout', group: :production
+
+    # Compile assets in production Heroku environment
     gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
