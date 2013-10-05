@@ -2,51 +2,60 @@
 
 %html
   %head
-    %title Joanne
+    %title Ultimo Recurso
+    %meta{ :content => "Administración de Último Recurso", :name => "description" }
+    %meta{ :content => "Astiam", :name => "author" }
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-    %body
+  %body
 
-      / Header and Nav
+    / Header and Nav
 
-      .row
-        .large-12.columns
-          %ul.inline-list.right
-            %li
-              %a{:href => "#"}
-                %i.icon-vcard
-                Eduardo Delgaldo
-            %li
-              %a{:href => "#"}
-                %i.icon-cog
-                Opciones
+    .row
+      .large-12.columns
+        %nav.top-bar
+          %section.top-bar-section
+            %ul.right
+              %li.has-dropdown
+                %a{:href => "#"}
+                  %i.icon-vcard
+                  Eduardo Delgaldo
+                %ul.dropdown
+                  %li
+                    %a{:href => "#"}
+                      %i.icon-cog
+                      Preferencias
+                  %li.logout
+                    %a{:href => destroy_user_session_path, :data => {'method' => 'delete'}}
+                      %i.icon-logout
+                      Salir
 
-      / End Header and Nav
+        .large-9.columns.large-centered
+    / End Header and Nav
 
-      .row
+    .row
 
-        / Main Content Section
+      / Main Content Section
 
-        .large-9.push-3.columns
+      .large-10.push-2.columns
 
-          = yield
+        = yield
 
-        / Nav Sidebar
+      / Nav Sidebar
 
-        .large-3.pull-9.columns
+      - if user_signed_in?
+
+        .large-2.pull-10.columns
 
           %ul.side-nav
-            %li.search
-              %form
-                %input{:type => "search", :placeholder => "Buscar pacientes"}
             %li
-              %a{:href => "#"}
+              %a{:href => authenticated_root_path}
                 %i.icon-layout
                 General
             %li
-              %a{:href => "#"}
+              %a{:href => users_path}
                 %i.icon-users
                 Usuarios
             %li

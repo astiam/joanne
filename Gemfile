@@ -4,7 +4,6 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 
-
 gem 'mongoid', github: 'mongoid/mongoid'
 
 gem 'haml'
@@ -23,11 +22,17 @@ gem 'jquery-rails'
 
 gem 'turbolinks'
 
+gem 'bson_ext'
+
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'devise'
 
+gem 'cancan'
+
 gem 'tire'
+
+gem 'cubism-rails'
 
 group :producion do
     # Web Server
@@ -38,4 +43,13 @@ group :producion do
 
     # Compile assets in production Heroku environment
     gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+
+    # New Relic
+    gem 'newrelic_rpm'
+end
+
+group :development do
+    gem 'better_errors'
+
+    gem 'binding_of_caller'
 end
