@@ -59,6 +59,7 @@ GEM
     bson (2.0.0.rc2)
     bson_ext (1.5.1)
     builder (3.1.4)
+    cancan (1.6.10)
     coderay (1.1.0)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -172,6 +173,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bson_ext
+  cancan
   coffee-rails (~> 4.0.0)
   cubism-rails
   devise

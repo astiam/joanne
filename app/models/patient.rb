@@ -5,4 +5,5 @@ class Patient
   field :telephone, type: String
   field :cellphone, type: String
   field :address, type: String
+  field :id_card, type: String
 end

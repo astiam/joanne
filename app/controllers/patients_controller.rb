@@ -45,6 +45,18 @@ class PatientsController < ApplicationController
     redirect_to patients_url, notice: 'Patient was successfully destroyed.'
   end
 
+  def bulk_action
+      params[:patients_records].each do |id|
+          Patient.find(id).destroy
+      end
+
+      respond_to do |format|
+        format.html { redirect_to users_path }
+        format.json { head :no_content }
+      end
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
@@ -53,6 +65,6 @@ class PatientsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def patient_params
-      params.require(:patient).permit(:firstname, :lastname, :telephone, :cellphone, :address)
+      params.require(:patient).permit(:firstname, :lastname, :telephone, :cellphone, :address, :id_card)
     end
 end

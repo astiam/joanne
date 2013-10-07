@@ -7,5 +7,9 @@ Joanette::Application.routes.draw do
         get "users", :to => "users#index"
     end
 
-    resources :patients
+    resources :patients do
+        collection do
+            delete 'bulk_action'
+        end
+    end
 end

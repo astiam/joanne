@@ -1,0 +1,67 @@
+%h2= @patient.firstname + " " + @patient.lastname
+
+%a.button.small{:href => edit_patient_path(@patient)}
+  %i.icon-pencil
+  Editar
+
+.section-container.auto{:data => {"section" => true}}
+
+  %section.active
+    %p.title{:data => {"section-title" => true}}
+      %a{:href => "#panel1"} General
+    .content{:data => {"section-content" => true}}
+      .section-container.accordion{:data => {"section" => "accordion"}}
+        %section.active
+          %p.title{:data => {"section-title" => true}}
+            %a{:href => "#panel1-1"} Section 1
+          .content{:data => {"section-content" => true}}
+            %p Content 1
+        %section
+          %p.title{:data => {"section-title" => true}}
+            %a{:href => "#panel1-2"} Section 2
+          .content{:data => {"section-content" => true}}
+            %p Content 1
+      %h5 Descripción
+      %p Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+
+      %h5 Ficha personal
+      %table
+        %thead
+          %tr
+            %th Edad
+            %th Género
+            %th Raza
+            %th Teléfono
+            %th Celular
+            %th Cédula de identidad
+            %th Domicilio
+            %th Estado civil
+
+        %tbody
+          %tr
+            %td= @patient.telephone
+            %td= @patient.cellphone
+            %td= @patient.id_card
+            %td= @patient.address
+
+  %section
+    %p.title{:data => {"section-title" => true}}
+      %a{:href => "#panel2"} Historial
+    .content{:data => {"section-content" => true}}
+      .section-container.auto{:data => {"section" => "accordion"}}
+        %section.active
+          %p.title{:data => {"section-title" => true}}
+            %a{:href => "#"} Section 1
+          .content{:data => {"section-content" => true}}
+            %p Content 1
+        %section
+          %p.title{:data => {"section-title" => true}}
+            %a{:href => "#"} Section 2
+          .content{:data => {"section-content" => true}}
+            %p Content 1
+
+  %section
+    %p.title{:data => {"section-title" => true}}
+      %a{:href => "#panel2"} Datos clínicos
+    .content{:data => {"section-content" => true}}
+      %p algo

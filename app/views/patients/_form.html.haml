@@ -7,10 +7,72 @@
         = @patient.errors.full_messages.each do |msg|
           %li= msg
 
-  .actions
-    = f.text_field :firstname
-    = f.text_field :lastname
-    = f.text_field :telephone
-    = f.text_field :cellphone
-    = f.text_field :address
-    = f.submit
+  .row
+    .large-6.columns
+      %h3 Información básica
+      .actions
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "firstname"} Nombres
+          .small-9.columns
+            = f.text_field :firstname
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "lastname"} Apellidos
+          .small-9.columns
+            = f.text_field :lastname
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "telephone"} Teléfono
+          .small-9.columns
+            = f.text_field :telephone
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "cellphone"} Celular
+          .small-9.columns
+            = f.text_field :cellphone
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "id-card"} C.I.
+          .small-9.columns
+            = f.text_field :id_card
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "address"} Domicilio
+          .small-9.columns
+            = f.text_field :address
+    .large-6.columns
+      %h3 Información clínica
+      .actions
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "firstname"} Nombres
+          .small-9.columns
+            = f.text_field :firstname
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "lastname"} Apellidos
+          .small-9.columns
+            = f.text_field :lastname
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "telephone"} Teléfono
+          .small-9.columns
+            = f.text_field :telephone
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "cellphone"} Celular
+          .small-9.columns
+            = f.text_field :cellphone
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "id-card"} C.I.
+          .small-9.columns
+            = f.text_field :id_card
+        .row
+          .small-3.columns
+            %label.right.inline{:for => "address"} Domicilio
+          .small-9.columns
+            = f.text_field :address
+
+  = submit_tag "Guardar", :class => "button"

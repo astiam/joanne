@@ -5,6 +5,7 @@
     %title Ultimo Recurso
     %meta{ :content => "Administración de Último Recurso", :name => "description" }
     %meta{ :content => "Astiam", :name => "author" }
+    %link{ :href =>'http://fonts.googleapis.com/css?family=Open+Sans', :rel => 'stylesheet', :type => 'text/css'}
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -14,7 +15,7 @@
     / Header and Nav
 
     .row
-      .large-12.columns
+      .large-12.columns.top
         %nav.top-bar
           %section.top-bar-section
             %ul.right
@@ -39,7 +40,7 @@
 
       / Main Content Section
 
-      .large-10.push-2.columns
+      #main.large-10.push-2.columns
 
         = yield
 
@@ -47,25 +48,39 @@
 
       - if user_signed_in?
 
-        .large-2.pull-10.columns
+        #sidebar.large-2.pull-10.columns
 
-          %ul.side-nav
-            %li
-              %a{:href => authenticated_root_path}
-                %i.icon-layout
-                General
-            %li
-              %a{:href => users_path}
+          .section-container.accordion{:data => {"section" => "accordion"}}
+            %section.section
+              %p.title
                 %i.icon-users
                 Usuarios
-            %li
-              %a{:href => "#"}
-                %i.icon-line-graph
-                Gráficas
-            %li
-              %a{:href => "#"}
-                %i.icon-tools
+              .content
+                %ul.side-nav
+                  %li
+                    %a{:href => patients_path} Pacientes
+                  %li
+                    %a{:href => users_path} Operadores
+            %section.section
+              %p.title
+                %i.icon-users
+                Reportes
+              .content
+                %ul.side-nav
+                  %li
+                    %a{:href => users_path} Pacientes
+                  %li
+                    %a{:href => users_path} Operadores
+            %section.section
+              %p.title
+                %i.icon-users
                 Administración
+              .content
+                %ul.side-nav
+                  %li
+                    %a{:href => users_path} Pacientes
+                  %li
+                    %a{:href => users_path} Operadores
 
       / Footer
 

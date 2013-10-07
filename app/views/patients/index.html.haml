@@ -1,0 +1,43 @@
+%h2 Pacientes
+
+= form_tag bulk_action_patients_path, method: :delete do
+  .button-bar
+    %ul.button-group
+      %li{:style => "margin-right: 30px;"}
+        %a.small.button.success{:href => new_patient_path}
+          %i.icon-add-user
+          Nuevo
+      %li
+        %a.small.button.secondary{:href => "#"}
+          %i.icon-trash
+          Borrar
+      %li
+        %a.small.button.secondary{:href => "#"}
+          %i.icon-eye
+          Enviar a revisión
+
+  %table
+    %thead
+      %tr
+        %th
+          %input{:type => "checkbox"}
+        %th
+        %th{"width" => "200"} Nombres
+        %th{"width" => "200"} Apellidos
+        %th Teléfono
+        %th Celular
+        %th Cédula de identidad
+        %th{"width" => "200"} Domicilio
+
+    %tbody
+      - @patients.each do |p|
+        %tr
+          %td= check_box_tag "patients_records[]", p.id
+          %td
+            %i.icon-warning
+          %td= link_to p.firstname, patient_path(p)
+          %td= link_to p.lastname, patient_path(p)
+          %td= p.telephone
+          %td= p.cellphone
+          %td= p.id_card
+          %td= p.address

@@ -13,3 +13,31 @@
  *= require entypo
  *= require foundation_and_overrides
  */
+
+.row {
+    min-width:100% !important;
+}
+
+.top {
+    background-color: #333;
+}
+
+#main {
+    padding-top: 20px;
+}
+
+#sidebar {
+    background-color: #333;
+    padding: 0;
+
+    i {
+        color: darken(#fff, 50%) !important;
+        font-size: emCalc(30px) !important;
+    }
+}
+
+#wrapper {
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 20px;
+}

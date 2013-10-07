@@ -15,14 +15,14 @@
 // $em-base: 16px;
 
 // We use these to control various global styles
-// $body-bg: #fff;
+$body-bg: #eee;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans", sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
-// $font-smoothing: antialiased;
+$font-smoothing: antialiased;
 
 // We use these to control text direction settings
 // $text-direction: ltr;
@@ -38,7 +38,7 @@
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
-// $shiny-edge-size: 0 1px 0;
+ $shiny-edge-size: 0;
 // $shiny-edge-color: rgba(#fff, .5);
 // $shiny-edge-active-color: rgba(#000, .2);
 
@@ -85,8 +85,8 @@
 //
 
 // We use these to control header font styles
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $header-font-weight: bold;
+$header-font-family: "Open Sans", sans-serif;
+$header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
 // $header-line-height: 1.4;
@@ -96,7 +96,7 @@
 
 // We use these to control header font sizes
 // $h1-font-size: emCalc(44px);
-// $h2-font-size: emCalc(37px);
+$h2-font-size: emCalc(27px);
 // $h3-font-size: emCalc(27px);
 // $h4-font-size: emCalc(23px);
 // $h5-font-size: emCalc(18px);
@@ -116,7 +116,7 @@
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: normal;
-// $paragraph-font-size: 1em;
+$paragraph-font-size: 0.9em;
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: emCalc(20px);
 // $paragraph-aside-font-size: emCalc(14px);
@@ -797,18 +797,18 @@
 // $section-function-factor: 10%;
 
 // These style the titles
-// $section-title-color: #333;
-// $section-title-bg: #efefef;
+/*$section-title-color: #333;*/
+/*$section-title-bg: #333;*/
 // $section-title-bg-active: darken($section-title-bg, $section-function-factor);
 // $section-title-bg-active-tabs: #fff;
 
 // Want to control border size, here ya go!
-// $section-border-size: 1px;
+/*$section-border-size: 0px;*/
 // $section-border-style: solid;
 // $section-border-color: #ccc;
 
 // Control the color of the background and some size options
-// $section-content-bg: #fff;
+/*$section-content-bg: lighten($section-title-bg, 10%);*/
 // $section-vertical-nav-min-width: emCalc(200px);
 // $section-bottom-margin: emCalc(20px);
 
@@ -817,7 +817,7 @@
 //
 
 // We use this to control padding.
-// $side-nav-padding: emCalc(14px) 0;
+$side-nav-padding: 0px;
 
 // We use these to control list styles.
 // $side-nav-list-type: none;
@@ -825,9 +825,9 @@
 // $side-nav-list-margin: 0 0 emCalc(7px) 0;
 
 // We use these to control link styles.
-// $side-nav-link-color: $primary-color;
+ $side-nav-link-color: #fff;
 // $side-nav-link-color-active: lighten(#000, 30%);
-// $side-nav-font-size: emCalc(14px);
+ $side-nav-font-size: emCalc(14px);
 // $side-nav-font-weight: bold;
 
 // We use these to control border styles
@@ -968,11 +968,11 @@
 //
 
 // Background color for the top bar
-$topbar-bg: $body-bg;
+$topbar-bg: #333;
 
 // Height and margin
-// $topbar-height: 45px;
-// $topbar-margin-bottom: emCalc(30px);
+$topbar-height: auto;
+$topbar-margin-bottom: emCalc(0px);
 
 // Control Input height for top bar
 // $topbar-input-height: 2.45em;
@@ -982,14 +982,14 @@ $topbar-bg: $body-bg;
 // $topbar-title-font-size: emCalc(17px);
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $body-font-color;
+$topbar-link-color: #fff;
 // $topbar-link-weight: bold;
 // $topbar-link-font-size: emCalc(13px);
 
 // Style the top bar dropdown elements
  $topbar-dropdown-bg: $body-bg;
- $topbar-dropdown-link-color: $body-font-color;
-// $topbar-dropdown-toggle-size: 5px;
+ $topbar-dropdown-link-color: #fff;
+ $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.5;
 // $dropdown-label-color: #555;
