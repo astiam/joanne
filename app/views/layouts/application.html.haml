@@ -24,10 +24,10 @@
                   %i.icon-vcard
                   Eduardo Delgaldo
                 %ul.dropdown
-                  %li
-                    %a{:href => "#"}
-                      %i.icon-cog
-                      Preferencias
+                  -#%li
+                    -#%a{:href => "#"}
+                      -#%i.icon-cog
+                      -#Preferencias
                   %li.logout
                     %a{:href => destroy_user_session_path, :data => {'method' => 'delete'}}
                       %i.icon-logout
@@ -81,12 +81,3 @@
                     %a{:href => users_path} Pacientes
                   %li
                     %a{:href => users_path} Operadores
-
-      / Footer
-
-      %footer.row
-        .large-13.columns
-          %hr
-          .row
-            .large-6.columns
-              %p &copy; Copyright no one at all. Go to town.

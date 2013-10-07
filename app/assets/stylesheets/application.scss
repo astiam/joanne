@@ -34,6 +34,25 @@
         color: darken(#fff, 50%) !important;
         font-size: emCalc(30px) !important;
     }
+
+    p.title {
+        background-color: #333;
+        color: #fff;
+        padding-left: 20px;
+    }
+
+    section {
+        border: 0;
+
+        .content {
+            background-color: lighten(#333, 5%);
+            padding-left: 40px;
+        }
+    }
+
+    .section-container {
+        border: 0;
+    }
 }
 
 #wrapper {

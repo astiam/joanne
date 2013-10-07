@@ -4,10 +4,12 @@ class PatientsController < ApplicationController
   # GET /patients
   def index
     @patients = Patient.all
+    @histories = History.all
   end
 
   # GET /patients/1
   def show
+    @histories = @patient.histories.all
   end
 
   # GET /patients/new
@@ -17,11 +19,13 @@ class PatientsController < ApplicationController
 
   # GET /patients/1/edit
   def edit
+    @histories = @patient.histories.all
   end
 
   # POST /patients
   def create
     @patient = Patient.new(patient_params)
+    @patient.helped_by = "Eduardo Delgaldo"
 
     if @patient.save
       redirect_to @patient, notice: 'Patient was successfully created.'
@@ -57,9 +61,11 @@ class PatientsController < ApplicationController
   end
 
   def add_clinical_history
-      History.create(clinical_history_params)
+      @patient = Patient.find(params[:patient_id])
+      @history = @patient.histories.create(:text => params[:text], :author => current_user.email)
+      @history.set_created_at
 
-      redirect_to @patient
+      redirect_to patient_path(params[:patient_id])
   end
 
 
@@ -74,7 +80,7 @@ class PatientsController < ApplicationController
       params.require(:patient).permit(:firstname, :lastname, :telephone, :cellphone, :address, :id_card)
     end
 
-    def clinical_history_params
-      params.require(:history).permit(:text)
+    def history_params
+      params.require(:history).permit(:text) if params[:history]
     end
 end
