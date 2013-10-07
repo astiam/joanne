@@ -56,6 +56,12 @@ class PatientsController < ApplicationController
       end
   end
 
+  def add_clinical_history
+      History.create(clinical_history_params)
+
+      redirect_to @patient
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -66,5 +72,9 @@ class PatientsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def patient_params
       params.require(:patient).permit(:firstname, :lastname, :telephone, :cellphone, :address, :id_card)
+    end
+
+    def clinical_history_params
+      params.require(:history).permit(:text)
     end
 end

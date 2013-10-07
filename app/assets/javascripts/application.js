@@ -17,3 +17,9 @@
 //= require_tree .
 
 $(document).foundation();
+
+$(document).ready(function() {
+    $('#form-wrapper form').focus(function() {
+        alert("hola");
+    });
+});

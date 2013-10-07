@@ -7,7 +7,7 @@
 
   %section.active
     %p.title{:data => {"section-title" => true}}
-      %a{:href => "#panel1"} General
+      %a{:href => "#general"} General
     .content{:data => {"section-content" => true}}
       %ul.inline-list
         %li
@@ -35,6 +35,7 @@
             %th Género
             %th Raza
             %th Teléfono
+            %th Teléfono auxiliar
             %th Celular
             %th Cédula de identidad
             %th Domicilio
@@ -43,6 +44,7 @@
         %tbody
           %tr
             %td= @patient.telephone
+            %td= @patient.telephone_aux
             %td= @patient.cellphone
             %td= @patient.id_card
             %td= @patient.address
@@ -71,6 +73,7 @@
               %strong Terapeuta
             %td Hospital Evangélico
 
+
       %h5 Otras características
       %ul.inline-list
         %li
@@ -82,20 +85,59 @@
         %li
           %strong Escolaridad
           Nivel terciario
+
+  %section
+    %p.title{:data => {"section-title" => true}}
+      %a{:href => "#data"} Datos clínicos
+    .content{:data => {"section-content" => true}}
+      %h5 Antecedentes familiares
+
+      %ul.no-bullet
         %li
-          %strong Emergencia móvil
-          Nivel terciario
+          %i.icon-check
+          Violencia doméstica
+
+      %hr
+
+      .row
+
+        .large-6.columns
+
+          %h5 Antecedentes por parte paterna
+
+          %ul.no-bullet
+            %li
+              %i.icon-check
+              Epilepsia
+            %li
+              %i.icon-check
+              Jubilación compulsiva
+
+        .large-6.columns
+
+          %h5 Antecedentes por parte materna
+
+          %ul.no-bullet
+            %li
+              %i.icon-check
+              Epilepsia
+            %li
+              %i.icon-check
+              Jubilación compulsiva
+            %li
+              %i.icon-check
+              Violencia sexual
 
   %section
     %p.title{:data => {"section-title" => true}}
-      %a{:href => "#panel2"} Datos clínicos
+      %a{:href => "#clinical-history"} Historial clínico
     .content{:data => {"section-content" => true}}
-      %p algo
 
-  %section
-    %p.title{:data => {"section-title" => true}}
-      %a{:href => "#panel2"} Historial clínico
-    .content{:data => {"section-content" => true}}
+      #form-wrapper
+        = form_tag add_clinical_history_patients_path, method: :post do
+          = text_area_tag 'clinical_history_text', nil, :rows => 6, :placeholder => "Ingresar información de seguimiento"
+          = submit_tag "Agregar", :class => "button small secondary"
+
       .panel
         %ul.inline-list
           %li

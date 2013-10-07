@@ -10,6 +10,7 @@ Joanette::Application.routes.draw do
     resources :patients do
         collection do
             delete 'bulk_action'
+            post 'add_clinical_history'
         end
     end
 end
