@@ -1,8 +1,7 @@
-%h2= @patient.firstname + " " + @patient.lastname
-
-%a.button.small{:href => edit_patient_path(@patient)}
-  %i.icon-pencil
-  Editar
+%h2
+  = @patient.firstname + " " + @patient.lastname
+  %small
+    %a.button.small{:href => edit_patient_path(@patient)} Editar
 
 .section-container.auto{:data => {"section" => true}}
 
@@ -10,21 +9,25 @@
     %p.title{:data => {"section-title" => true}}
       %a{:href => "#panel1"} General
     .content{:data => {"section-content" => true}}
-      .section-container.accordion{:data => {"section" => "accordion"}}
-        %section.active
-          %p.title{:data => {"section-title" => true}}
-            %a{:href => "#panel1-1"} Section 1
-          .content{:data => {"section-content" => true}}
-            %p Content 1
-        %section
-          %p.title{:data => {"section-title" => true}}
-            %a{:href => "#panel1-2"} Section 2
-          .content{:data => {"section-content" => true}}
-            %p Content 1
-      %h5 Descripción
-      %p Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+      %ul.inline-list
+        %li
+          %i.icon-leaf{:style => "color: #4e9a06; font-size: larger;"}
+        %li
+          %i.icon-eye{:style => "color: #a40000; font-size: larger;"}
+        %li
+          %strong
+            %i.icon-user{:style => "font-size: larger;"}
+            Atendido por Silvia Pelaez
+        %li
+          %span
+            %i.icon-location{:style => "font-size: larger;"}
+            Montevideo, Uruguay
 
-      %h5 Ficha personal
+      %hr
+
+      %h5 Motivo de primer contacto
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis sagittis nisl. Vestibulum vel massa ut libero congue fringilla. Duis pulvinar erat id lorem auctor iaculis. Etiam et ultricies nisi, at eleifend leo. Maecenas at tortor libero. Aenean ut magna vel dolor blandit faucibus. Phasellus tortor dui, consectetur non neque id, auctor scelerisque ligula. Nulla facilisi. Suspendisse accumsan diam vel rhoncus aliquet. Morbi pulvinar tristique sem, vel posuere lacus feugiat congue. Maecenas tempus eget metus at scelerisque. Vestibulum in mauris ac dolor lobortis bibendum. In hac habitasse platea dictumst.
+
       %table
         %thead
           %tr
@@ -44,24 +47,91 @@
             %td= @patient.id_card
             %td= @patient.address
 
-  %section
-    %p.title{:data => {"section-title" => true}}
-      %a{:href => "#panel2"} Historial
-    .content{:data => {"section-content" => true}}
-      .section-container.auto{:data => {"section" => "accordion"}}
-        %section.active
-          %p.title{:data => {"section-title" => true}}
-            %a{:href => "#"} Section 1
-          .content{:data => {"section-content" => true}}
-            %p Content 1
-        %section
-          %p.title{:data => {"section-title" => true}}
-            %a{:href => "#"} Section 2
-          .content{:data => {"section-content" => true}}
-            %p Content 1
+      %h5 Asistencia médica
+      %table
+        %tbody
+          %tr
+            %td
+              %strong Mutualista
+            %td Hospital Evangélico
+          %tr
+            %td
+              %strong Emergencia móvil
+            %td Hospital Evangélico
+          %tr
+            %td
+              %strong Médico tratante
+            %td Hospital Evangélico
+          %tr
+            %td
+              %strong Pisquiatra tratante
+            %td Hospital Evangélico
+          %tr
+            %td
+              %strong Terapeuta
+            %td Hospital Evangélico
+
+      %h5 Otras características
+      %ul.inline-list
+        %li
+          %strong Lugar de nacimiento
+          Montevideo, Uruguay
+        %li
+          %strong Nacionalidad
+          Montevideo, Uruguay
+        %li
+          %strong Escolaridad
+          Nivel terciario
+        %li
+          %strong Emergencia móvil
+          Nivel terciario
 
   %section
     %p.title{:data => {"section-title" => true}}
       %a{:href => "#panel2"} Datos clínicos
     .content{:data => {"section-content" => true}}
       %p algo
+
+  %section
+    %p.title{:data => {"section-title" => true}}
+      %a{:href => "#panel2"} Historial clínico
+    .content{:data => {"section-content" => true}}
+      .panel
+        %ul.inline-list
+          %li
+            %strong
+              %i.icon-calendar
+              20/06/2013
+          %li= link_to "Silvia Pelaez", patients_path
+
+        %hr
+
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis sagittis nisl. Vestibulum vel massa ut libero congue fringilla. Duis pulvinar erat id lorem auctor iaculis. Etiam et ultricies nisi, at eleifend leo. Maecenas at tortor libero. Aenean ut magna vel dolor blandit faucibus. Phasellus tortor dui, consectetur non neque id, auctor scelerisque ligula. Nulla facilisi. Suspendisse accumsan diam vel rhoncus aliquet. Morbi pulvinar tristique sem, vel posuere lacus feugiat congue. Maecenas tempus eget metus at scelerisque. Vestibulum in mauris ac dolor lobortis bibendum. In hac habitasse platea dictumst.
+        %p Aenean sed elementum mauris, eu semper elit. Vestibulum elementum porttitor erat, facilisis malesuada orci tempor id. Sed auctor magna mi, sit amet mollis nisl tempor quis. Nunc ac sagittis dolor. In ac elit a ipsum viverra mattis eget ut arcu. Sed gravida suscipit enim in scelerisque. Aliquam at laoreet enim. Vestibulum sodales, lorem et auctor accumsan, mauris leo lacinia velit, eu blandit odio elit feugiat dui. Suspendisse potenti. Integer augue nisi, convallis id congue quis, fermentum nec erat.
+
+      .panel
+        %ul.inline-list
+          %li
+            %strong
+              %i.icon-calendar
+              02/06/2013
+          %li= link_to "Silvia Pelaez", patients_path
+
+        %hr
+
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis sagittis nisl. Vestibulum vel massa ut libero congue fringilla. Duis pulvinar erat id lorem auctor iaculis. Etiam et ultricies nisi, at eleifend leo. Maecenas at tortor libero. Aenean ut magna vel dolor blandit faucibus. Phasellus tortor dui, consectetur non neque id, auctor scelerisque ligula. Nulla facilisi. Suspendisse accumsan diam vel rhoncus aliquet. Morbi pulvinar tristique sem, vel posuere lacus feugiat congue. Maecenas tempus eget metus at scelerisque. Vestibulum in mauris ac dolor lobortis bibendum. In hac habitasse platea dictumst.
+        %p Aenean sed elementum mauris, eu semper elit. Vestibulum elementum porttitor erat, facilisis malesuada orci tempor id. Sed auctor magna mi, sit amet mollis nisl tempor quis. Nunc ac sagittis dolor. In ac elit a ipsum viverra mattis eget ut arcu. Sed gravida suscipit enim in scelerisque. Aliquam at laoreet enim. Vestibulum sodales, lorem et auctor accumsan, mauris leo lacinia velit, eu blandit odio elit feugiat dui. Suspendisse potenti. Integer augue nisi, convallis id congue quis, fermentum nec erat.
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis sagittis nisl. Vestibulum vel massa ut libero congue fringilla. Duis pulvinar erat id lorem auctor iaculis. Etiam et ultricies nisi, at eleifend leo. Maecenas at tortor libero. Aenean ut magna vel dolor blandit faucibus. Phasellus tortor dui, consectetur non neque id, auctor scelerisque ligula. Nulla facilisi. Suspendisse accumsan diam vel rhoncus aliquet. Morbi pulvinar tristique sem, vel posuere lacus feugiat congue. Maecenas tempus eget metus at scelerisque. Vestibulum in mauris ac dolor lobortis bibendum. In hac habitasse platea dictumst.
+        %p Aenean sed elementum mauris, eu semper elit. Vestibulum elementum porttitor erat, facilisis malesuada orci tempor id. Sed auctor magna mi, sit amet mollis nisl tempor quis. Nunc ac sagittis dolor. In ac elit a ipsum viverra mattis eget ut arcu. Sed gravida suscipit enim in scelerisque. Aliquam at laoreet enim. Vestibulum sodales, lorem et auctor accumsan, mauris leo lacinia velit, eu blandit odio elit feugiat dui. Suspendisse potenti. Integer augue nisi, convallis id congue quis, fermentum nec erat.
+
+      .panel
+        %ul.inline-list
+          %li
+            %strong
+              %i.icon-calendar
+              02/06/2013
+          %li= link_to "Silvia Pelaez", patients_path
+
+        %hr
+
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis sagittis nisl. Vestibulum vel massa ut libero congue fringilla. Duis pulvinar erat id lorem auctor iaculis. Etiam et ultricies nisi, at eleifend leo. Maecenas at tortor libero. Aenean ut magna vel dolor blandit faucibus. Phasellus tortor dui, consectetur non neque id, auctor scelerisque ligula. Nulla facilisi. Suspendisse accumsan diam vel rhoncus aliquet. Morbi pulvinar tristique sem, vel posuere lacus feugiat congue. Maecenas tempus eget metus at scelerisque. Vestibulum in mauris ac dolor lobortis bibendum. In hac habitasse platea dictumst.
