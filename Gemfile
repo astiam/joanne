@@ -34,7 +34,7 @@ gem 'tire'
 
 gem 'cubism-rails'
 
-group :producion do
+group :production do
     # Web Server
     gem 'puma'
 
