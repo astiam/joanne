@@ -14,29 +14,36 @@
 
     / Header and Nav
 
-    .row
-      .large-12.columns.top
-        %nav.top-bar
-          %section.top-bar-section
-            %ul.right
-              %li.has-dropdown
-                %a{:href => "#"}
-                  %i.icon-vcard
-                  Eduardo Delgaldo
-                %ul.dropdown
-                  -#%li
-                    -#%a{:href => "#"}
-                      -#%i.icon-cog
-                      -#Preferencias
-                  %li.logout
-                    %a{:href => destroy_user_session_path, :data => {'method' => 'delete'}}
-                      %i.icon-logout
-                      Salir
+    #topbar.row
 
-        .large-9.columns.large-centered
+      .large-12.columns.top
+        .fixed
+          %nav.top-bar
+            %section.top-bar-section
+              %ul.title-area
+                %li.name
+                  %a{:href => authenticated_root_path}
+                    %i.icon-home
+                    Último Recurso
+              %ul.right
+                %li.has-dropdown
+                  %a{:href => "#"}
+                    %i.icon-vcard
+                    Eduardo Delgaldo
+                  %ul.dropdown
+                    -#%li
+                      -#%a{:href => "#"}
+                        -#%i.icon-cog
+                        -#Preferencias
+                    %li.logout
+                      %a{:href => destroy_user_session_path, :data => {'method' => 'delete'}}
+                        %i.icon-logout
+                        Salir
+
+  .large-9.columns.large-centered
     / End Header and Nav
 
-    .row
+    #main-container.row
 
       / Main Content Section
 
@@ -51,29 +58,39 @@
         #sidebar.large-2.pull-10.columns
 
           .section-container.accordion{:data => {"section" => "accordion"}}
-            %section.section
+            %section.section{:class => is_active?(["main"])}
+              %p.title
+                %i.icon-layout
+                Panel
+              .content
+                %ul.side-nav
+                  %li
+                    %a{:href => authenticated_root_path} General
+                  %li
+                    %a{:href => users_path} Operadores
+            %section.section{:class => is_active?(["patients", "operators"])}
               %p.title
                 %i.icon-users
                 Usuarios
               .content
                 %ul.side-nav
                   %li
-                    %a{:href => patients_path} Pacientes
+                    %a{:href => patients_path, :class => is_active?(["patients"])} Pacientes
                   %li
                     %a{:href => users_path} Operadores
             %section.section
               %p.title
-                %i.icon-users
+                %i.icon-line-graph
                 Reportes
               .content
                 %ul.side-nav
                   %li
-                    %a{:href => users_path} Pacientes
+                    %a{:href => reports_path} General
                   %li
                     %a{:href => users_path} Operadores
             %section.section
               %p.title
-                %i.icon-users
+                %i.icon-cog
                 Administración
               .content
                 %ul.side-nav

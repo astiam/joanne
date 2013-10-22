@@ -14,12 +14,9 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require highcharts/highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/modules/exporting
 //= require_tree .
 
 $(document).foundation();
-
-$(document).ready(function() {
-    $('#form-wrapper form').focus(function() {
-        alert("hola");
-    });
-});

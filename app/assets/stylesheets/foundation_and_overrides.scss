@@ -825,9 +825,9 @@ $side-nav-padding: 0px;
 // $side-nav-list-margin: 0 0 emCalc(7px) 0;
 
 // We use these to control link styles.
- $side-nav-link-color: #fff;
+$side-nav-link-color: #444;
 // $side-nav-link-color-active: lighten(#000, 30%);
- $side-nav-font-size: emCalc(14px);
+$side-nav-font-size: emCalc(14px);
 // $side-nav-font-weight: bold;
 
 // We use these to control border styles
@@ -968,7 +968,7 @@ $side-nav-padding: 0px;
 //
 
 // Background color for the top bar
-$topbar-bg: #333;
+$topbar-bg: darken(#333, 5%);
 
 // Height and margin
 $topbar-height: auto;
@@ -987,9 +987,9 @@ $topbar-link-color: #fff;
 // $topbar-link-font-size: emCalc(13px);
 
 // Style the top bar dropdown elements
- $topbar-dropdown-bg: $body-bg;
- $topbar-dropdown-link-color: #fff;
- $topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-bg: $body-bg;
+$topbar-dropdown-link-color: #fff;
+$topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.5;
 // $dropdown-label-color: #555;

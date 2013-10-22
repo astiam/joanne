@@ -13,4 +13,6 @@ Joanette::Application.routes.draw do
             post 'add_clinical_history'
         end
     end
+
+    resources :reports
 end

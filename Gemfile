@@ -32,7 +32,7 @@ gem 'cancan'
 
 gem 'tire'
 
-gem 'cubism-rails'
+gem 'lazy_high_charts'
 
 group :production do
     # Web Server

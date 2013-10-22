@@ -11,45 +11,72 @@
  *= require_self
  *= require_tree .
  *= require entypo
- *= require foundation_and_overrides
  */
+@import 'foundation_and_overrides';
+
+$sidebar-bg: darken($body-bg, 5%);
+$sidebar-color: #444;
+
 
 .row {
     min-width:100% !important;
 }
 
 .top {
-    background-color: #333;
+    background-color: $topbar-bg;
 }
 
+#topbar {
+    box-shadow: 1px 1px 10px green;
+
+    .top-bar {
+        padding: 0px 20px;
+    }
+}
+
+#main-container {
+    padding-top: 45px;
+}
 #main {
     padding-top: 20px;
 }
 
 #sidebar {
-    background-color: #333;
+    background-color: $sidebar-bg;
+    border-right: 1px solid darken($sidebar-bg, 5%);
     padding: 0;
+    position: absolute;
+    height: 98.6%;
 
     i {
-        color: darken(#fff, 50%) !important;
-        font-size: emCalc(30px) !important;
+        color: darken(#444, 20%) !important;
+        font-size: emCalc(20px) !important;
     }
 
     p.title {
-        background-color: #333;
-        color: #fff;
+        background-color: $sidebar-bg;
+        color: #444;
         padding-left: 20px;
+        padding-bottom: 10px;
     }
 
     section {
         border: 0;
+        border-bottom: 1px solid darken($sidebar-bg, 5%);
 
         .content {
-            background-color: lighten(#333, 5%);
+            background-color: lighten($sidebar-bg, 5%);
             padding-left: 40px;
         }
     }
 
+    .section {
+        padding: 10px 0px 0px 0px !important;
+
+        .active {
+            font-weight: bold;
+        }
+    }
     .section-container {
         border: 0;
     }
