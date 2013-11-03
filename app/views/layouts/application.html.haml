@@ -6,8 +6,8 @@
     %meta{ :content => "Administración de Último Recurso", :name => "description" }
     %meta{ :content => "Astiam", :name => "author" }
     %link{ :href =>'http://fonts.googleapis.com/css?family=Open+Sans', :rel => 'stylesheet', :type => 'text/css'}
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
 
   %body
@@ -59,15 +59,10 @@
 
           .section-container.accordion{:data => {"section" => "accordion"}}
             %section.section{:class => is_active?(["main"])}
-              %p.title
-                %i.icon-layout
-                Panel
-              .content
-                %ul.side-nav
-                  %li
-                    %a{:href => authenticated_root_path} General
-                  %li
-                    %a{:href => users_path} Operadores
+              %a{:href => authenticated_root_path}
+                %p.title
+                  %i.icon-layout
+                  Panel
             %section.section{:class => is_active?(["patients", "operators"])}
               %p.title
                 %i.icon-users

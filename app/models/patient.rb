@@ -1,6 +1,9 @@
 class Patient
     include Mongoid::Document
     include Mongoid::Timestamps::Created
+    include Kaminari::MongoidExtension::Criteria
+    include Kaminari::MongoidExtension::Document
+    include Autocomplete
 
     field :firstname, type: String
     field :lastname, type: String

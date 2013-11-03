@@ -20,7 +20,7 @@ gem 'entypo-rails'
 
 gem 'jquery-rails'
 
-gem 'turbolinks'
+#gem 'turbolinks'
 
 gem 'bson_ext'
 
@@ -30,9 +30,11 @@ gem 'devise'
 
 gem 'cancan'
 
-gem 'tire'
+#gem 'tire'
 
 gem 'lazy_high_charts'
+
+gem 'kaminari'
 
 group :production do
     # Web Server
