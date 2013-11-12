@@ -36,7 +36,7 @@ gem 'lazy_high_charts'
 
 gem 'kaminari'
 
-gem 'rails3-jquery-autocomplete', :path => "./../rails3-jquery-autocomplete"
+gem 'rails3-jquery-autocomplete'
 
 group :production do
     # Web Server
