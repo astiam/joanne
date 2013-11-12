@@ -8,6 +8,8 @@ gem 'mongoid', github: 'mongoid/mongoid'
 
 gem 'haml'
 
+gem 'turbolinks'
+
 gem 'sass-rails', '~> 4.0.0'
 
 gem 'uglifier', '>= 1.3.0'
@@ -20,7 +22,7 @@ gem 'entypo-rails'
 
 gem 'jquery-rails'
 
-#gem 'turbolinks'
+gem 'jquery-ui-rails'
 
 gem 'bson_ext'
 
@@ -30,11 +32,11 @@ gem 'devise'
 
 gem 'cancan'
 
-#gem 'tire'
-
 gem 'lazy_high_charts'
 
 gem 'kaminari'
+
+gem 'rails3-jquery-autocomplete'
 
 group :production do
     # Web Server

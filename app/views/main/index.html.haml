@@ -3,6 +3,7 @@
 .row
   .large-6.columns
     .panel
-      = debug @p
-      -#- @p.results.each do |p|
-        -#= debug p
+      = form_for @patient do |p|
+        =p.autocomplete_field :firstname, main_autocomplete_patient_firstname_path, :id_element => "#extra_data", :update_elements => {:firstname => "#extra_data"}
+
+    #extra_data.panel{:style => "width:400px; height:200px;"}

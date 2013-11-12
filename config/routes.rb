@@ -7,6 +7,9 @@ Joanette::Application.routes.draw do
         get "users", :to => "users#index"
     end
 
+    get 'main/autocomplete_patient_firstname'
+
+
     resources :patients do
         collection do
             delete 'bulk_action'

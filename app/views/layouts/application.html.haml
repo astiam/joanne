@@ -6,8 +6,8 @@
     %meta{ :content => "Administración de Último Recurso", :name => "description" }
     %meta{ :content => "Astiam", :name => "author" }
     %link{ :href =>'http://fonts.googleapis.com/css?family=Open+Sans', :rel => 'stylesheet', :type => 'text/css'}
-    = stylesheet_link_tag    "application", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => false
     = csrf_meta_tags
 
   %body

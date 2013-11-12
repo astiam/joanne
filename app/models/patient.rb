@@ -16,4 +16,8 @@ class Patient
     field :helped_by, type: String
 
     embeds_many :histories
+
+    def customize_value
+        "#{self.firstname} #{self.lastname}"
+    end
 end

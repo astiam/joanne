@@ -12,10 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.autocomplete
 //= require foundation
+//= require turbolinks
 //= require highcharts/highcharts
 //= require highcharts/highcharts-more
 //= require highcharts/modules/exporting
 //= require_tree .
 
 $(document).foundation();
+
+document.addEventListener("page:load", function() {
+    Foundation.libs.section.events();
+});
+
+document.addEventListener("page:fetch", function() {
+    $('#main-container').fadeIn("slow");
+});

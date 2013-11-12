@@ -1,5 +1,10 @@
 class MainController < ApplicationController
+
+    autocomplete :patient, :firstname, :full => true, :display_value => :customize_value
+
     def index
+        @patient = Patient.new
+
         @chart = LazyHighCharts::HighChart.new('pie') do |f|
             f.chart({:defaultSeriesType=>"pie" , :margin=> [0, 0, 0, 0], :spacingBottom => 0} )
             series = {
