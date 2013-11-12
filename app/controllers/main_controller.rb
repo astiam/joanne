@@ -1,6 +1,5 @@
 class MainController < ApplicationController
-
-    autocomplete :patient, :firstname, :full => true, :display_value => :customize_value
+    autocomplete :patient, :firstname, :display_value => :customize_value
 
     def index
         @patient = Patient.new
@@ -37,6 +36,16 @@ class MainController < ApplicationController
             }
             }
             })
+        end
+    end
+
+    def get_autocomplete_items(parameters)
+        super(parameters)
+
+        if params.has_key?(:scope)
+            method = "search_by_" + params[:scope]
+
+            Patient.send(method.to_sym, params[:term])
         end
     end
 end

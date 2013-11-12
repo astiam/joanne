@@ -5,6 +5,7 @@ class Patient
     include Kaminari::MongoidExtension::Document
     include Autocomplete
 
+    field :fullname, type: String
     field :firstname, type: String
     field :lastname, type: String
     field :telephone, type: String
@@ -16,6 +17,10 @@ class Patient
     field :helped_by, type: String
 
     embeds_many :histories
+
+    self.fields.keys.each do |field|
+        scope "search_by_#{field.to_s}".to_sym, ->(query) { where(field.to_s.to_sym => /.*#{query}.*/i) }
+    end
 
     def customize_value
         "#{self.firstname} #{self.lastname}"

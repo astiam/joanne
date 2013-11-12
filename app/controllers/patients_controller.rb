@@ -26,6 +26,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     @patient.helped_by = "Eduardo Delgaldo"
+    @patient.fullname  = @patient.firstname + " " + @patient.lastname
 
     if @patient.save
       redirect_to @patient, notice: 'Patient was successfully created.'
@@ -77,7 +78,7 @@ class PatientsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def patient_params
-      params.require(:patient).permit(:firstname, :lastname, :telephone, :cellphone, :address, :id_card)
+      params.require(:patient).permit(:fullname, :firstname, :lastname, :telephone, :cellphone, :address, :id_card)
     end
 
     def history_params
