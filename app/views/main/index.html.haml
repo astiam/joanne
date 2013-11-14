@@ -1,7 +1,6 @@
 %h1 Panel principal
 
 .row
-  .large-6.columns
-    .panel
-      = form_for @patient do |p|
-        =p.autocomplete_field :firstname, main_autocomplete_patient_firstname_path, :input_html => {:id_element => "#extra_data"}, :update_elements => {:firstname => "#extra_data"}
+  .large-9.columns.large-centered
+    = form_for @patient do |p|
+      =p.autocomplete_field :firstname, main_autocomplete_patient_firstname_path, 'data-delimiter' => ',', :multiple => true

@@ -88,3 +88,9 @@ $sidebar-color: #444;
     margin-top: 20px;
     padding: 20px;
 }
+
+.ui-autocomplete {
+    background-color: $body-bg !important;
+    border: 0px !important;
+    top: 250px !important;
+}

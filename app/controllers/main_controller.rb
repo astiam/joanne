@@ -48,4 +48,19 @@ class MainController < ApplicationController
             Patient.send(method.to_sym, params[:term])
         end
     end
+
+    def json_for_autocomplete(items, method, extra_data=[])
+      items.collect do |item|
+        hash = {"id" => item.id.to_s, "label" => self.format_autocomplete(item), "value" => item.send(method)}
+        extra_data.each do |datum|
+          hash[datum] = item.send(datum)
+        end if extra_data
+        # TODO: Come back to remove this if clause when test suite is better
+        hash
+      end
+    end
+
+    def format_autocomplete(item)
+        render_to_string(:partial => "main/format_autocomplete.html.haml", :locals => {:item => item})
+    end
 end

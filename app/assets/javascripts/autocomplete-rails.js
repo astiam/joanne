@@ -4,7 +4,6 @@
   jQuery.fn.railsAutocomplete = function() {
     var handler = function() {
       if (!this.railsAutoCompleter) {
-          //if (this./^\d+$/.test("099");)
         this.railsAutoCompleter = new jQuery.railsAutocomplete(this);
       }
     };
@@ -37,11 +36,10 @@
       }
 
       jQuery(e).autocomplete({
+        html: true,
         source: function( request, response ) {
           jQuery.getJSON( jQuery(e).attr('data-autocomplete'), {
             term: extractLast( request.term ),
-            istel: /^\d+$/.test(request.term) && request.term.substring(0, 1) != "0" ? true : false,
-            isidc: /^\d+$/.test(request.term) && request.term.substring(0, 1) != "0" ? true : false,
             scope: function() {
                 // if is cellphone
                 if (/^\d+$/.test(request.term) && request.term.substring(0, 1) == "0") {
@@ -51,7 +49,6 @@
                 } else {
                     return "fullname"
                 }
-
             },
           }, function() {
             if(arguments[0].length == 0) {

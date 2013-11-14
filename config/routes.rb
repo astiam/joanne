@@ -9,7 +9,6 @@ Joanette::Application.routes.draw do
 
     get 'main/autocomplete_patient_firstname'
 
-
     resources :patients do
         collection do
             delete 'bulk_action'
